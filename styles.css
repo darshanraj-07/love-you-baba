@@ -1,0 +1,123 @@
+/* styles.css */
+
+/* Hide audio controls if you don't want them visible */
+#audioControls, #bgMusic { /* Correct the selector to match the ID of your audio element */
+    display: none;
+}
+
+/* Background Gradient */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #8e9eab, #eef2f3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Card and Content Styling */
+.container {
+    perspective: 1000px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px;
+    animation: float 6s ease-in-out infinite;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    animation: none; /* Disable float animation on hover */
+    transform: rotateY(15deg) rotateX(5deg);
+}
+
+/* Image Carousel Styling */
+.carousel {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fade 5s linear infinite; /* Synchronize with JavaScript */
+}
+
+/* Header Gradient Text */
+.wish h1 {
+    background: -webkit-linear-gradient(#ff5f6d, #ffc371);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Message Text */
+.wish p {
+    color: #555;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Button Animation */
+.button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Keyframe Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px 20px rgba(0, 123, 255, 0);
+    }
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
